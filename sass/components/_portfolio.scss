@@ -1,0 +1,147 @@
+.portfolio-mainsection {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  border-top: 1px solid #ececec;
+}
+
+.portfolio-buttons {
+  display: flex;
+  padding-left: 0;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+  @extend %ul;
+}
+
+.portfolio-button button {
+  padding: 6px 22px;
+  left: 576px;
+  top: 174px;
+  border: 1px solid #f5f4fa;
+  background: #f5f4fa;
+  border-radius: 4px;
+  color: map-get($colors, "secondary-text");
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  transition: map-get($transitions, "transition-color"),
+    map-get($transitions, "transition-bgc"),
+    map-get($transitions, "transition-border"),
+    map-get($transitions, "transition-boxsh");
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: map-get($colors, "accent");
+    border: 1px map-get($colors, "accent");
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+    outline: none;
+  }
+}
+
+.portfolio-button:not(:last-child) {
+  margin-right: 8px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  @extend %ul;
+}
+
+.project {
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+  padding: 0;
+
+  transition: map-get($transitions, "transition-boxsh");
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.project-description {
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 20px 24px;
+  outline: none;
+}
+
+.project-link {
+  @extend %a;
+}
+
+.project-title {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: map-get($colors, "secondary-text");
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.project-type {
+  font-size: 16px;
+  line-height: 1.87;
+  color: map-get($colors, "primary-text");
+  margin-top: 0;
+}
+
+.project-picture {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  outline: none;
+  margin: 0;
+}
+
+.project-overlap {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  padding: 63px 24px;
+
+  max-width: 100%;
+  height: auto;
+
+  background-color: rgba(33, 150, 243, 0.9);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.56;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project:hover .project-overlap {
+  transform: translateY(0);
+  opacity: 1;
+}

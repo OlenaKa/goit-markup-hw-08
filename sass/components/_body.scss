@@ -1,0 +1,12 @@
+body {
+  font-family: $font-main;
+  font-style: $font-style-main;
+  font-size: $font-size-main;
+  letter-spacing: $letter-spacing-main;
+  color: map-get($colors, "primary-text");
+  background-color: #ffffff;
+
+  @extend %ul;
+  @extend %a;
+  @extend %img;
+}

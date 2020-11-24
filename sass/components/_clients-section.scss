@@ -1,0 +1,42 @@
+.client-section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.clients {
+  display: flex;
+  @extend %ul;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  width: 1170px;
+
+  & .client-link:nth-child(6n) {
+    margin-right: 0;
+  }
+}
+
+.client {
+  display: flex;
+  width: calc((100% - 150px) / 6);
+  margin-right: 30px;
+}
+
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  border-radius: 4px;
+  border: 1px solid map-get($colors, "primary-icon");
+  fill: map-get($colors, "primary-icon");
+
+  transition: map-get($transitions, "transition-border"),
+    map-get($transitions, "transition-fill");
+
+  &:hover {
+    border: 1px solid map-get($colors, "accent");
+    fill: map-get($colors, "accent");
+  }
+}
