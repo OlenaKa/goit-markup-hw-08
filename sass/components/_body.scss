@@ -3,10 +3,24 @@ body {
   font-style: $font-style-main;
   font-size: $font-size-main;
   letter-spacing: $letter-spacing-main;
-  color: map-get($colors, "primary-text");
+  color: getColor("primary-text");
   background-color: #ffffff;
 
-  @extend %ul;
-  @extend %a;
-  @extend %img;
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  // @extend %ul;
+  // @extend %a;
+  // @extend %img;
 }

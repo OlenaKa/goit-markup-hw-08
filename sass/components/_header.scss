@@ -1,91 +1,218 @@
-header .container {
+.page-header {
+  position: relative;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ececec;
 
-  & nav {
-    display: inline-flex;
-    align-items: center;
+  @media screen and (min-width: 768px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 
-.site-nav {
+.menu-button {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  @extend %ul;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
 
+.menu-button:hover .icon-menu,
+.menu-button:focus .icon-menu {
+  fill: getColor("accent");
+}
+
+.menu-button.is-open .icon-menu {
+  display: none;
+}
+
+.menu-button .icon-cross {
+  display: none;
+}
+
+.menu-button.is-open .icon-cross {
+  display: block;
+}
+
+.menu-button.is-open:hover .icon-cross,
+.menu-button.is-open:hover .icon-cross {
+  fill: getColor("accent");
+}
+
+.navigation {
+  display: none;
+  // transform: translateY(-100%);
+  // transition: getTransition("transition-transform");
+
+  &.is-open {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+
+    padding-bottom: 44px;
+
+    background-color: #ffffff;
+
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    transform: translateY(1px);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 520px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 930px;
+  }
+}
+
+.site-nav.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 20px;
   margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  margin-left: 94px;
-  & .item:not(:last-child) {
+
+  @media screen and (min-width: 768px) {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 0px;
+  }
+}
+
+.site-nav .item {
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
     margin-right: 50px;
+    margin-bottom: 0;
   }
 }
 
 .site-nav .link {
   display: inline-flex;
+  justify-content: center;
   position: relative;
-  color: map-get($colors, "secondary-text");
-  font-weight: 500;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  padding-top: 25px;
-  padding-bottom: 25px;
 
-  transition: map-get($transitions, "transition-color");
+  color: getColor("secondary-text");
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  padding-bottom: 8px;
+
+  transition: getTransition("transition-color");
   &:hover,
   &:focus {
-    color: map-get($colors, "accent");
+    color: getColor("accent");
     text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    font-size: 14px;
+    line-height: 1.14;
   }
 }
 
 .link.current {
-  color: map-get($colors, "accent");
+  color: getColor("accent");
 
   &::after {
     position: absolute;
-    display: block;
+    display: inline-block;
     bottom: 0;
     left: 0;
     width: 100%;
     content: "";
     height: 4px;
     border-radius: 2px;
-    background-color: map-get($colors, "accent");
+    background-color: getColor("accent");
+  }
+}
+
+.header-address {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    align-items: center;
   }
 }
 
 .header-address .link {
-  color: map-get($colors, "primary-text");
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  color: getColor("primary-text");
   font-weight: 500;
-  line-height: 1.14;
+  font-size: 18px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   font-style: normal;
-  @extend %a;
-  fill: var(--primary-text-color);
 
-  transition: map-get($transitions, "transition-fill"),
-    map-get($transitions, "transition-color");
+  fill: getColor("primary-text");
+
+  transition: getTransition("transition-fill"),
+    getTransition("transition-color");
 
   &:hover,
   &:focus {
-    color: map-get($colors, "accent");
-    fill: map-get($colors, "accent");
-    // text-decoration: none;
+    color: getColor("accent");
+    fill: getColor("accent");
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    justify-content: flex-start;
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 30px;
+    justify-content: flex-end;
+    font-size: 14px;
+    line-height: 1.14;
   }
 }
 
 .address-icon {
+  display: block;
+
   margin-right: 10px;
-}
 
-.header-address a:not(:last-child) {
-  margin-right: 30px;
-}
-
-.header-address {
-  margin-left: auto;
+  @media screen and (min-width: 768px) {
+    width: 14px;
+    height: 14px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 16px;
+    height: 16px;
+  }
 }

@@ -13,11 +13,11 @@ $letter-spacing-main: 0.03em;
   height: auto;
 }
 
-%display-flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+// %display-flex-center {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 %a {
   text-decoration: none;
@@ -30,5 +30,5 @@ $letter-spacing-main: 0.03em;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
-  color: map-get($colors, "secondary-text");
+  color: getColor("secondary-text");
 }

@@ -16,11 +16,30 @@
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="container page-header">
         <a href="./index.html" class="logo"
           >Web<span class="logostudio">Studio</span></a
         >
-        <nav>
+        <button type="button" class="menu-button" data-menu-button>
+          <svg
+            width="24"
+            height="18"
+            aria-expanded="false"
+            aria-controls="navigation-container"
+            aria-label="Переключатель мобильногоо меню"
+          >
+            <use
+              class="icon-menu"
+              href="./images/newsprite.svg#menu-icon"
+            ></use>
+            <use
+              class="icon-cross"
+              href="./images/newsprite.svg#close-black"
+            ></use>
+          </svg>
+        </button>
+
+        <nav class="navigation" data-menu id="navigation-container">
           <ul class="site-nav list">
             <li class="item">
               <a href="./index.html" class="link current">Студия</a>
@@ -30,22 +49,22 @@
             </li>
             <li class="item"><a href="" class="link">Контакты</a></li>
           </ul>
-        </nav>
 
-        <address class="header-address">
-          <a href="mailto:info@devstudio.com" class="link">
-            <svg class="address-icon" width="16" height="12">
-              <use href="./images/newsprite.svg#envelope"></use>
-            </svg>
-            info@devstudio.com</a
-          >
-          <a href="tel:+380961111111" class="link">
-            <svg class="address-icon" width="10" height="16">
-              <use href="./images/newsprite.svg#smartphone"></use>
-            </svg>
-            +38 096 111 11 11</a
-          >
-        </address>
+          <address class="header-address">
+            <a href="mailto:info@devstudio.com" class="link">
+              <svg class="address-icon" width="16" height="20">
+                <use href="./images/newsprite.svg#envelope"></use>
+              </svg>
+              info@devstudio.com</a
+            >
+            <a href="tel:+380961111111" class="link">
+              <svg class="address-icon" width="10" height="20">
+                <use href="./images/newsprite.svg#smartphone"></use>
+              </svg>
+              +38 096 111 11 11</a
+            >
+          </address>
+        </nav>
       </div>
     </header>
     <main>
@@ -466,7 +485,8 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
-    <script>
+    <script src="./js/menu.js"></script>
+    <!-- <script>
       ;(() => {
         document
           .querySelector(".js-order-form")
@@ -478,6 +498,6 @@
             )
           })
       })()
-    </script>
+    </script> -->
   </body>
 </html>
