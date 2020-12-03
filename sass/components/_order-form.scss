@@ -1,5 +1,5 @@
 .order-form {
-  width: 528px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 40px;
@@ -8,7 +8,7 @@
 .order-form-title {
   margin-top: 0;
   margin-bottom: 12px;
-  color: map-get($colors, "secondary-text");
+  color: getColor("secondary-text");
   font-family: $font-main;
   font-style: $font-style-main;
   font-weight: bold;
@@ -30,7 +30,7 @@
   line-height: 1.17;
   letter-spacing: 0.01em;
   cursor: pointer;
-  color: map-get($colors, "primary-text");
+  color: getTransition("primary-text");
 }
 
 .order-form-field .info-input {
@@ -40,37 +40,38 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   cursor: pointer;
-  transition: map-get($transitions, "transition-border");
+  transition: getTransition("transition-border");
 }
 
 .order-form-field .info-input:hover {
-  border: 1px solid map-get($colors, "accent");
+  border: 1px solid getColor("accent");
 }
 
 .order-form-field .info-input:focus {
-  border: 1px solid map-get($colors, "accent");
+  border: 1px solid fill getColor("accent");
   outline: none;
 }
 
 .order-form-field .info-input:focus + .icon-order-form,
 .order-form-field .info-input:hover + .icon-order-form {
-  fill: map-get($colors, "accent");
+  fill: getColor("accent");
 }
 
 .icon-order-form {
   position: absolute;
   bottom: 15px;
   left: 15px;
-  transition: map-get($transitions, "transition-fill");
+  transition: getTransition("transition-fill");
 }
 
 .order-form-submit {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
   text-align: center;
   padding: 10px 32px;
-  border: 1px solid map-get($colors, "accent");
+  border: 1px solid getColor("accent");
   border-radius: 4px;
 
   color: #ffffff;
@@ -78,13 +79,12 @@
   font-size: 16px;
   line-height: 1.88;
   text-decoration: none;
-  background-color: map-get($colors, "accent");
-  transition: map-get($transitions, "transition-bgc"),
-    map-get($transitions, "transition-color");
+  background-color: getColor("accent");
+  transition: getTransition("transition-bgc"), getTransition("transition-color");
 
   &:hover,
   &:focus {
-    color: map-get($colors, "accent");
+    color: getColor("accent");
     background-color: #ffffff;
   }
 }
@@ -102,25 +102,25 @@
   line-height: 1.17;
   letter-spacing: 0.01em;
   cursor: pointer;
-  color: map-get($colors, "primary-text");
-  transition: map-get($transitions, "transition-border");
+  color: getColor("primary-text");
+  transition: getTransition("transition-border");
 }
 
 .comment-text:focus,
 .comment-text:hover {
-  border: 1px solid map-get($colors, "accent");
+  border: 1px solid getColor("accent");
   outline: none;
 }
 
 .order-form-field.checkbox {
-  display: inline-flex;
+  display: inline;
   flex-flow: row;
 }
 
 .checkbox-link {
-  display: block;
+  // display: inline;
   margin-left: 5px;
-  color: map-get($colors, "accent");
+  color: getColor("accent");
 }
 .box {
   width: 1px;
@@ -141,16 +141,16 @@
   height: 15px;
   margin-right: 8px;
 
-  border: 2px solid map-get($colors, "secondary-text");
+  border: 2px solid getColor("secondary-text");
   border-radius: 4px;
 }
 
 .box:checked + .checkbox-icon {
-  background-color: map-get($colors, "accent");
+  background-color: getColor("accent");
   background-image: url(../images/checkedbox.svg);
   background-size: contain;
   background-origin: border-box;
   border-radius: 2px;
-  border: 0.2px solid var(--accent-color);
+  border: 0.2px solid getColor("accent");
   fill: #ffffff;
 }

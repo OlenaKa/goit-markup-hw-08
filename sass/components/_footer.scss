@@ -20,11 +20,6 @@ footer {
     }
   }
 
-  // & .social-links {
-  //   margin-top: 22px;
-  //   margin-bottom: 0;
-  // }
-
   & .link-icon {
     background-color: rgba(255, 255, 255, 0.1);
     fill: #ffffff;
@@ -72,12 +67,8 @@ footer .logo {
 }
 
 .address-line {
-  // display: inline-block;
   text-decoration: none;
   margin-bottom: 8px;
-  // &:not(:last-child) {
-  //   margin-bottom: 9px;
-  // }
 }
 
 .joinus {
@@ -99,20 +90,12 @@ footer .logo {
       margin: 20px 0 0 0;
     }
   }
-
-  // @media screen and (min-width: 1200px) {
-  //   display: inline-block;
-  //   width: 206px;
-  //   margin-right: 0;
-  //   margin-left: 70px;
-  // }
 }
 
 .subscribe {
   display: block;
   text-align: center;
   text-transform: uppercase;
-  // text-align: left;
 
   @media screen and (min-width: 768px) {
     margin-left: auto;
@@ -165,9 +148,6 @@ footer .logo {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 
-  // margin-right: 12px;
-
-  //
   padding: 15px;
   font-size: 16px;
   line-height: 1.25;
@@ -194,5 +174,4 @@ footer .logo {
   @media screen and (min-width: 1200px) {
     flex-wrap: nowrap;
   }
-  // margin-top: 20px;
 }
