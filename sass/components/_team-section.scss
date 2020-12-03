@@ -1,21 +1,29 @@
 .section-team {
   background-color: #f5f4fa;
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .team-members {
   @extend %ul;
   display: flex;
+  flex-wrap: wrap;
   margin-top: 0;
   margin-bottom: 0px;
   padding: 0;
+  @media screen and (min-width: 768px) {
+    margin: -15px;
+  }
 }
 
 .team-member {
-  width: calc((100% - 90px) / 4);
-  margin-right: 30px;
-
+  width: 100%;
+  margin-bottom: 30px;
   background-color: #ffffff;
 
   border-radius: 0px 0px 4px 4px;
@@ -23,17 +31,24 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
-  &:nth-child(4n) {
-    margin-right: 0;
+  @media screen and (min-width: 768px) {
+    width: calc(100% / 2 - 30px);
+    margin: 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: calc(100% / 4 - 30px);
   }
 }
 
+.member-photo {
+  width: 100%;
+}
 .photo-name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
-  color: map-get($colors, "secondary-text");
+  color: getColor("secondary-text");
 }
 
 .position-title {
@@ -70,12 +85,11 @@
   height: 44px;
   width: 44px;
   border-radius: 50%;
-  fill: map-get($colors, "primary-icon");
-  transition: map-get($transitions, "transition-bgc"),
-    map-get($transitions, "transition-fill");
+  fill: getColor("primary-icon");
+  transition: getTransition("transition-bgc"), getTransition("transition-fill");
   &:hover,
   &:focus {
-    background-color: map-get($colors, "accent");
+    background-color: getColor("accent");
     fill: #ffffff;
   }
 }

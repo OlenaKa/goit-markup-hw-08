@@ -4,7 +4,6 @@
   justify-content: space-between;
   padding-top: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #ececec;
 
   @media screen and (min-width: 768px) {
     padding-top: 0px;
@@ -60,12 +59,13 @@
     padding-bottom: 44px;
 
     background-color: #ffffff;
+    border-top: 1px solid #ececec;
 
     top: 100%;
     left: 0;
     width: 100%;
 
-    transform: translateY(1px);
+    transform: translateY(0);
   }
 
   @media screen and (min-width: 768px) {

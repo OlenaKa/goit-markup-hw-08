@@ -1,23 +1,55 @@
 footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: map-get($colors, "bg-secondary");
+  background-color: getColor("bg-secondary");
   color: #ffffff;
   font-style: $font-style-main;
 
-  & .container {
-    display: flex;
-    align-items: center;
+  @media screen and (min-width: 768px) {
+    & .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
-  & .social-links {
-    margin-top: 22px;
-    margin-bottom: 0;
+  @media screen and (min-width: 1200px) {
+    & .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
   }
+
+  // & .social-links {
+  //   margin-top: 22px;
+  //   margin-bottom: 0;
+  // }
 
   & .link-icon {
     background-color: rgba(255, 255, 255, 0.1);
     fill: #ffffff;
+  }
+}
+
+footer .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact {
+  display: block;
+  text-align: center;
+  margin-bottom: 52px;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 25%;
+    text-align: left;
+    margin-bottom: 0;
   }
 }
 
@@ -30,47 +62,72 @@ footer {
 }
 
 .footer-address .link {
-  color: map-get($colors, "footer-address");
+  color: getColor("footer-address");
   text-decoration: none;
 }
 .footer-address p {
   margin-top: 20px;
   margin-bottom: 0;
+  font-style: italic;
 }
 
 .address-line {
-  display: inline-block;
+  // display: inline-block;
   text-decoration: none;
-  &:not(:last-child) {
-    margin-bottom: 9px;
-  }
+  margin-bottom: 8px;
+  // &:not(:last-child) {
+  //   margin-bottom: 9px;
+  // }
 }
 
-.contact {
-  display: inline-block;
-}
 .joinus {
-  display: inline-block;
   text-transform: uppercase;
-  text-align: left;
-  width: 206px;
-  margin-right: 0;
-  margin-left: 70px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 25%;
+    align-self: center;
+    text-align: left;
+    margin-bottom: 0;
+    & .social-links {
+      margin: 20px 0 0 0;
+    }
+  }
+
+  // @media screen and (min-width: 1200px) {
+  //   display: inline-block;
+  //   width: 206px;
+  //   margin-right: 0;
+  //   margin-left: 70px;
+  // }
 }
 
 .subscribe {
-  display: inline-block;
+  display: block;
+  text-align: center;
   text-transform: uppercase;
-  text-align: left;
-  margin-left: 93px;
+  // text-align: left;
+
+  @media screen and (min-width: 768px) {
+    margin-left: auto;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: inline-block;
+    text-align: left;
+  }
 }
 
 .subscribe button {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 12 px;
   padding: 10px 29px;
-  border: 1px solid map-get($colors, "accent");
+  border: 1px solid getColor("accent");
   border-radius: 4px;
 
   color: #ffffff;
@@ -79,30 +136,38 @@ footer {
   font-size: 16px;
   line-height: 1.88;
   text-decoration: none;
-  background-color: map-get($colors, "accent");
+  background-color: getColor("accent");
 
-  transition: map-get($transitions, "transition-border"),
-    map-get($transitions, "transition-bgc"),
-    map-get($transitions, "transition-fill"),
-    map-get($transitions, "transition-color");
+  transition: getTransition("transition-border"),
+    getTransition("transition-bgc"), getTransition("transition-fill"),
+    getTransition("transition-color");
 
   &:hover,
   &:focus {
-    fill: map-get($colors, "accent");
+    fill: getColor("accent");
     border: 1px solid #ffffff;
     background-color: #ffffff;
-    color: map-get($colors, "accent");
+    color: getColor("accent");
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 12px;
   }
 }
 
 .subscribe input {
-  display: block;
-  background-color: var(--bg-secondary-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: getColor("bg-secondary");
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  margin-right: 12px;
 
-  width: 358px;
+  // margin-right: 12px;
+
+  //
   padding: 15px;
   font-size: 16px;
   line-height: 1.25;
@@ -114,6 +179,11 @@ footer {
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 1.25;
+
+  @media screen and (min-width: 1200px) {
+    width: 358px;
+    margin-bottom: 0;
+  }
 }
 
 .subscribe-icon {
@@ -121,6 +191,8 @@ footer {
 }
 
 .subscribe-action {
-  display: inline-flex;
-  margin-top: 20px;
+  @media screen and (min-width: 1200px) {
+    flex-wrap: nowrap;
+  }
+  // margin-top: 20px;
 }

@@ -15,7 +15,7 @@
 
   padding-top: 200px;
   padding-bottom: 200px;
-  background-color: var(--bg-secondary-color);
+  background-color: getColor("bg-secondary");
 }
 .main-title {
   margin-top: 0;
@@ -23,18 +23,26 @@
 
   color: #ffffff;
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.62;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+
+  // @media screen and (min-width: 768px) {
+  // }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 44px;
+    line-height: 1.36;
+  }
 }
 
 .order-button {
   display: inline-block;
   text-align: center;
   padding: 10px 32px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid getColor("accent");
   border-radius: 4px;
 
   color: #ffffff;
@@ -42,18 +50,19 @@
   font-size: 16px;
   line-height: 1.88;
   text-decoration: none;
-  background-color: map-get($colors, "accent");
+  background-color: getColor("accent");
 
-  transition: map-get($transitions, "transition-color"),
-    map-get($transitions, "transition-bgc");
+  transition: getTransition("transition-color"), getTransition("transition-bgc");
 
   &:hover {
-    color: map-get($colors, "accent");
+    color: getColor("accent");
     background: #ffffff;
     outline: #ffffff;
+    border: none;
   }
 
   &:focus {
     outline: none;
+    border: none;
   }
 }

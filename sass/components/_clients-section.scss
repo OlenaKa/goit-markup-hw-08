@@ -4,39 +4,45 @@
 }
 .clients {
   display: flex;
+  flex-wrap: wrap;
   @extend %ul;
   padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  width: 1170px;
+  margin: -15px;
+  // margin-bottom: 30px;
+  // width: 1170px;
 
-  & .client-link:nth-child(6n) {
-    margin-right: 0;
-  }
+  // & .client-link:nth-child(6n) {
+  //   margin-right: 0;
+  // }
 }
 
 .client {
-  display: flex;
-  width: calc((100% - 150px) / 6);
-  margin-right: 30px;
+  width: calc(100% / 2 - 30px);
+  margin: 15px;
+
+  @media screen and (min-width: 768px) {
+    width: calc(100% / 3 - 30px);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc(100% / 6 - 30px);
+  }
 }
 
 .client-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
   height: 90px;
   border-radius: 4px;
-  border: 1px solid map-get($colors, "primary-icon");
-  fill: map-get($colors, "primary-icon");
+  border: 1px solid getColor("primary-icon");
+  fill: getColor("primary-icon");
 
-  transition: map-get($transitions, "transition-border"),
-    map-get($transitions, "transition-fill");
+  transition: getTransition("transition-border"),
+    getTransition("transition-fill");
 
   &:hover {
-    border: 1px solid map-get($colors, "accent");
-    fill: map-get($colors, "accent");
+    border: 1px solid getColor("accent");
+    fill: getColor("accent");
   }
 }
