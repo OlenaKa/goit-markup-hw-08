@@ -39,8 +39,9 @@
     min-width: 528px;
     min-height: 581px;
   }
-
-  overflow-y: scroll;
+  @media screen and (max-width: 1199px) {
+    overflow-y: scroll;
+  }
 }
 
 .modal button.close {

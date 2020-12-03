@@ -6,17 +6,19 @@
 
 .portfolio-buttons {
   display: flex;
+  flex-wrap: wrap;
   padding-left: 0;
-  justify-content: center;
   margin-top: 0;
   margin-bottom: 50px;
   @extend %ul;
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .portfolio-button button {
   padding: 6px 22px;
-  left: 576px;
-  top: 174px;
+  margin: 4px 8px;
   border: 1px solid #f5f4fa;
   background: #f5f4fa;
   border-radius: 4px;
@@ -40,13 +42,9 @@
   }
 }
 
-.portfolio-button:not(:last-child) {
-  margin-right: 8px;
-}
-
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -56,22 +54,35 @@ img {
   padding: 0;
   margin: 0;
   @extend %ul;
+
+  @media screen and (min-width: 768px) {
+    margin: -15px;
+  }
 }
 
 .project {
-  width: calc((100% - 60px) / 3);
-  margin-right: 30px;
+  width: 100%;
   margin-bottom: 30px;
-  padding: 0;
 
   transition: map-get($transitions, "transition-boxsh");
 
-  &:nth-child(3n) {
-    margin-right: 0;
+  @media screen and (min-width: 768px) {
+    width: calc(100% / 2 - 30px);
+    margin: 15px;
   }
 
-  &:nth-last-child(-n + 3) {
-    margin-bottom: 0;
+  @media screen and (min-width: 1200px) {
+    width: calc(100% / 3 - 30px);
+    margin: 15px;
+    // margin-bottom: 30px;
+    // padding: 0;
+    // &:nth-child(3n) {
+    //   margin-right: 0;
+    // }
+
+    // &:nth-last-child(-n + 3) {
+    //   margin-bottom: 0;
+    // }
   }
 
   &:hover {
@@ -98,7 +109,7 @@ img {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  color: map-get($colors, "secondary-text");
+  color: getColor("secondary-text");
   margin-top: 0;
   margin-bottom: 4px;
 }
@@ -106,7 +117,7 @@ img {
 .project-type {
   font-size: 16px;
   line-height: 1.87;
-  color: map-get($colors, "primary-text");
+  color: getColor("primary-text");
   margin-top: 0;
 }
 
@@ -125,20 +136,29 @@ img {
   margin: 0;
   top: 0;
   right: 0;
-  padding: 63px 24px;
+  padding: 77px 24px;
+  text-align: left;
 
   max-width: 100%;
-  height: auto;
+  height: 100%;
 
   background-color: rgba(33, 150, 243, 0.9);
   color: #ffffff;
   font-size: 18px;
   line-height: 1.56;
+  opacity: 0;
   border: none;
   outline: none;
   overflow: hidden;
   transform: translateY(100%);
   transition: getTransition("transition-transform");
+
+  @media screen and (min-width: 768px) {
+    padding: 49px 24px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 63px 24px;
+  }
 }
 
 .project:hover .project-overlap {
