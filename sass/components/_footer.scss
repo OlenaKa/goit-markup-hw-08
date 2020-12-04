@@ -5,14 +5,14 @@ footer {
   color: #ffffff;
   font-style: $font-style-main;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     & .container {
       display: flex;
       flex-wrap: wrap;
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     & .container {
       display: flex;
       flex-direction: row;
@@ -37,11 +37,11 @@ footer .logo {
   text-align: center;
   margin-bottom: 52px;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     width: 50%;
   }
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     width: 25%;
     text-align: left;
     margin-bottom: 0;
@@ -77,11 +77,11 @@ footer .logo {
   text-align: center;
   margin-bottom: 60px;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     width: 50%;
   }
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     width: 25%;
     align-self: center;
     text-align: left;
@@ -97,12 +97,12 @@ footer .logo {
   text-align: center;
   text-transform: uppercase;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     margin-left: auto;
     margin: auto;
   }
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     display: inline-block;
     text-align: left;
   }
@@ -133,7 +133,7 @@ footer .logo {
     color: getColor("accent");
   }
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     display: inline-flex;
     align-items: center;
     margin-left: 12px;
@@ -160,7 +160,7 @@ footer .logo {
   line-height: 1.25;
   letter-spacing: 1.25;
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     width: 358px;
     margin-bottom: 0;
   }
@@ -171,7 +171,7 @@ footer .logo {
 }
 
 .subscribe-action {
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     flex-wrap: nowrap;
   }
 }

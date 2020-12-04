@@ -5,9 +5,12 @@
   padding-top: 16px;
   padding-bottom: 16px;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+  @include for-size(below-desktop) {
+    width: 100%;
   }
 }
 
@@ -18,7 +21,7 @@
   outline: none;
   border: none;
   background-color: transparent;
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     display: none;
   }
 }
@@ -47,8 +50,8 @@
 
 .navigation {
   display: none;
-  // transform: translateY(-100%);
-  // transition: getTransition("transition-transform");
+
+  transform: translateY(100%);
 
   &.is-open {
     position: absolute;
@@ -66,18 +69,19 @@
     top: 100%;
     left: 0;
     width: 100%;
-
-    transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0%);
   }
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     width: 520px;
     display: flex;
     position: relative;
+    transform: translateY(0);
     justify-content: space-between;
   }
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     width: 930px;
   }
 }
@@ -90,7 +94,7 @@
   margin-bottom: 20px;
   margin-top: 0;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
@@ -107,7 +111,7 @@
   text-align: center;
   margin-bottom: 40px;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     margin-right: 50px;
     margin-bottom: 0;
   }
@@ -132,7 +136,7 @@
     text-decoration: none;
   }
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     padding-top: 28px;
     padding-bottom: 28px;
     font-size: 14px;
@@ -161,7 +165,7 @@
   justify-content: space-evenly;
   flex-direction: column;
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     flex-direction: row;
     align-items: center;
   }
@@ -190,13 +194,13 @@
     fill: getColor("accent");
   }
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     margin-bottom: 0;
     justify-content: flex-start;
     font-size: 12px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     margin-left: 30px;
     justify-content: flex-end;
     font-size: 14px;
@@ -209,11 +213,11 @@
 
   margin-right: 10px;
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet) {
     width: 14px;
     height: 14px;
   }
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     width: 16px;
     height: 16px;
   }

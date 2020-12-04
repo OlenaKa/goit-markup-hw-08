@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: flex-start;
 
-  @media screen and (min-width: 1200px) {
+  @include for-size(desktop) {
     font-size: 26px;
     line-height: 1.2;
   }

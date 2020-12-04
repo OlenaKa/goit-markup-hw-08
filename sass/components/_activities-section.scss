@@ -1,6 +1,7 @@
 .activities-section {
   padding-bottom: 94px;
-  @media screen and (max-width: 1199px) {
+
+  @include for-size(below-desktop) {
     display: none;
   }
 }

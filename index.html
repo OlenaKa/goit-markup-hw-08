@@ -129,16 +129,37 @@
           <h2 class="section-title">Чем мы занимаемся</h2>
           <ul class="activities">
             <li class="activity-item">
-              <img src="./images/img1.jpg" alt="рабочий стол" width="370" />
+              <picture>
+                <source
+                  srcset="./images/img1.jpg 1x, ./images/img1@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+
+                <img src="./images/img1.jpg" alt="рабочий стол" width="370" />
+              </picture>
               <h3 class="activity-title">Десктопные приложения</h3>
             </li>
             <li class="activity-item">
-              <img src="./images/img2.jpg" alt="рабочий экран" width="370" />
+              <picture>
+                <source
+                  srcset="./images/img2.jpg 1x, ./images/img2@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
 
+                <img src="./images/img2.jpg" alt="рабочий стол" width="370" />
+              </picture>
               <h3 class="activity-title">Мобильные приложения</h3>
             </li>
             <li class="activity-item">
-              <img src="./images/img3.jpg" alt="экран планшета" width="370" />
+              <picture>
+                <source
+                  srcset="./images/img3.jpg 1x, ./images/img3@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+
+                <img src="./images/img3.jpg" alt="экран планшета" width="370" />
+              </picture>
+
               <h3 class="activity-title">Дизайнерские решения</h3>
             </li>
           </ul>
@@ -150,11 +171,35 @@
           <h2 class="section-title">Наша команда</h2>
           <ul class="team-members">
             <li class="team-member">
-              <img
-                class="member-photo"
-                src="./images/ihordemjanenko.jpg"
-                alt="фото Игорь Демьяненко"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/ihordemjanenko.jpg    1x,
+                    ./images/ihordemjanenko@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tab/ihordemjanenkotab.jpg    1x,
+                    ./images/tab/ihordemjanenkotab@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mob/ihordemjanenkomob.jpg    1x,
+                    ./images/mob/ihordemjanenkomob@2x.jpg 2x
+                  "
+                  media="(max-width: 480px)"
+                />
+                <img
+                  class="member-photo"
+                  src="./images/ihordemjanenko.jpg"
+                  alt="фото Игорь Демьяненко"
+                />
+              </picture>
+
               <h3 class="photo-name">Игорь Демьяненко</h3>
               <p class="position-title">Product Designer</p>
               <ul class="social-links">
@@ -189,11 +234,34 @@
               </ul>
             </li>
             <li class="team-member">
-              <img
-                class="member-photo"
-                src="./images/olharepina.jpg"
-                alt="фото Ольга Репина"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/olharepina.jpg    1x,
+                    ./images/olharepina@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tab/olharepinatab.jpg    1x,
+                    ./images/tab/olharepinatab@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mob/olharepinamob.jpg    1x,
+                    ./images/mob/olharepinamob@2x.jpg 2x
+                  "
+                  media="(max-width: 480px)"
+                />
+                <img
+                  class="member-photo"
+                  src="./images/olharepina.jpg"
+                  alt="фото Ольга Репина"
+                />
+              </picture>
               <h3 class="photo-name">Ольга Репина</h3>
               <p class="position-title">Frontend Developer</p>
               <ul class="social-links">
@@ -228,11 +296,34 @@
               </ul>
             </li>
             <li class="team-member">
-              <img
-                class="member-photo"
-                src="./images/nikolaytarasov.jpg"
-                alt="фото Николай Тарасов"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/nikolaytarasov.jpg    1x,
+                    ./images/nikolaytarasov@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tab/nikolaytarasovtab.jpg    1x,
+                    ./images/tab/nikolaytarasovtab@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mob/nikolaytarasovmob.jpg    1x,
+                    ./images/mob/nikolaytarasovmob@2x.jpg 2x
+                  "
+                  media="(max-width: 480px)"
+                />
+                <img
+                  class="member-photo"
+                  src="./images/nikolaytarasov.jpg"
+                  alt="фото Николай Тарасов"
+                />
+              </picture>
               <h3 class="photo-name">Николай Тарасов</h3>
               <p class="position-title">Marketing</p>
               <ul class="social-links">
@@ -267,11 +358,34 @@
               </ul>
             </li>
             <li class="team-member">
-              <img
-                class="member-photo"
-                src="./images/mihailjermakov.jpg"
-                alt="фото Михаил Ермаков"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/mihailjermakov.jpg    1x,
+                    ./images/mihailjermakov@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tab/mihailjermakovtab.jpg    1x,
+                    ./images/tab/mihailjermakovtab@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mob/mihailjermakovmob.jpg    1x,
+                    ./images/mob/mihailjermakovmob@2x.jpg 2x
+                  "
+                  media="(max-width: 767px)"
+                />
+                <img
+                  class="member-photo"
+                  src="./images/mihailjermakov.jpg"
+                  alt="фото Михаил Ермаков"
+                />
+              </picture>
               <h3 class="photo-name">Михаил Ермаков</h3>
               <p class="position-title">UI Designer</p>
               <ul class="social-links">
