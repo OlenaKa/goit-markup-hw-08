@@ -18,6 +18,10 @@
 }
 
 .modal {
+  @include for-size(mobile-only) {
+    min-width: 100%;
+    max-width: 450px;
+  }
   position: absolute;
   top: 50%;
   left: 50%;
